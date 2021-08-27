@@ -22,7 +22,9 @@ function App() {
           <Route path="/" exact>
             <FormPage />
           </Route>
-
+          <Route path="/basvuru-basarili">
+            <SuccessPage />
+          </Route>
           <Route path="/AdminPage">
             {admin ? <AdminPage /> : <LoginPage {...{ setAdmin }} />}
           </Route>
