@@ -19,7 +19,7 @@ export const SidebarData = [
 
   {
     title: 'Sorgulama',
-    path: '/basvuru-sorgula/{}id',
+    path: '/basvuru-sorgula/{id}',
     icon: <IoIcons.IoMdHelpCircle />,
     cName: 'nav-text',
   },

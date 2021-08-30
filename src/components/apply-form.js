@@ -71,9 +71,9 @@ const ApplyForm = ({}) => {
             <button className="btn" type="submit">
               Gönder
             </button>
-            {/*  <button className="btn" type="reset">
+            <button className="btn" type="reset">
               Sıfırla
-            </button> */}
+            </button>
           </Form>
         </div>
       )}

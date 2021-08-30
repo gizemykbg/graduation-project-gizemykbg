@@ -27,6 +27,7 @@
         "useTabs": false
       }
     ],
+    "import/no-named-as-default": 0,
     "react/destructuring-assignment": ["off"],
     "import/no-unresolved": ["off"],
     "no-shadow": ["off"],

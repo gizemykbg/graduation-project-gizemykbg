@@ -32,7 +32,7 @@ function SuccessPage() {
           </button>
           <p>Butona tıklayarak başvuru durumuna bakabilirsiniz</p>
           <br />
-          <ul key={info}>
+          <ul>
             <li>Firstname: {info.firstname}</li>
             <li>Lastname: {info.lastname}</li>
             <li>Tc: {info.tc}</li>
