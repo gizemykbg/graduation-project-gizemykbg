@@ -25,7 +25,7 @@ const Routers = () => {
           <Route path="/LoginPage">
             <LoginPage {...{ setUser }} />
           </Route>
-          <Route path="/basvuru-sorgula/{id}">
+          <Route path="/basvuru-sorgula">
             <Sorgulama />
           </Route>
         </Switch>

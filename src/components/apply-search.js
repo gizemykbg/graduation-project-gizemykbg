@@ -1,11 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { adminFormList, getData } from '../firebase/services';
 
 export default function ApplySearch() {
   const [value, setValue] = useState(' ');
-  const [data, setData] = useState([]);
+  const [data, setData] = useState({});
 
   const inputRef = useRef();
 
@@ -13,8 +14,12 @@ export default function ApplySearch() {
     setValue(inputRef.current.value);
     getData(value).then((data) => {
       setData(data);
+      console.log(data);
+      console.log('lalalalla');
     });
   };
+
+  console.log(value);
 
   const Styles = styled.div`
      {
@@ -103,18 +108,18 @@ export default function ApplySearch() {
         <button onClick={() => handleClick()} type="submit">
           Ara
         </button>
+        <br />
+        <h6>Çözemediğim sorun yüzünden iki kere aratınız.</h6>
         <div>
-          {data && (
-            <ul>
-              <li>{data.firstname}</li>
-              <li>{data.lastname}</li>
-              <li>{data.tc}</li>
-              <li>{data.age}</li>
-              <li>{data.adress}</li>
-              <li>{data.status}</li>
-              <li>{data.adminMessage}</li>
-            </ul>
-          )}
+          <ul>
+            <li>{data.firstname}</li>
+            <li>{data.lastname}</li>
+            <li>{data.tc}</li>
+            <li>{data.age}</li>
+            <li>{data.adress}</li>
+            <li>{data.status}</li>
+            <li>{data.adminMessage}</li>
+          </ul>
         </div>
       </div>
     </Styles>
