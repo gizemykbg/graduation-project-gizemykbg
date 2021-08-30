@@ -1,33 +1,35 @@
-import React, { useState } from "react";
-import * as FaIcons from "react-icons/fa";
-import * as AiIcons from "react-icons/ai";
-import { Link } from "react-router-dom";
-import { SidebarData } from "./bar-data";
-import "../navbar/navbar.css";
-import { IconContext } from "react-icons";
+import React, { useState } from 'react';
+import * as FaIcons from 'react-icons/fa';
+import * as AiIcons from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import { IconContext } from 'react-icons';
 
-import { LogoutButton } from "../logout";
+import '../navbar/navbar.css';
+import LogoutButton from '../logout';
+import SidebarData from './bar-data';
 
 function Sidebar() {
   const [sidebar, setSidebar] = useState(false);
 
-  const showSidebar = () => setSidebar(!sidebar);
+  const showSidebar = () => {
+    setSidebar(!sidebar);
+  };
 
   return (
     <>
-      <IconContext.Provider value={{ color: "#fff" }}>
+      <IconContext.Provider value={{ color: '#fff' }}>
         <div className="navbar">
           <Link to="#" className="menu-bars">
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
         </div>
 
-        <nav className={sidebar ? "nav-menu active" : "nav-menu"}>
+        <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className="nav-menu-items" onClick={showSidebar}>
             <li className="navbar-toggle">
               <Link to="#" className="menu-bars">
                 <AiIcons.AiOutlineClose />
-              </Link>{" "}
+              </Link>
             </li>
             <LogoutButton />
             {SidebarData.map((item, index) => {

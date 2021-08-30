@@ -1,50 +1,44 @@
-import React, { useState, useEffect } from "react";
-import Navbar from "../components/navbar/navbar";
-import { useHistory, useLocation } from "react-router-dom";
-import { getData } from "../firebase/services";
+import React, { useState, useEffect } from 'react';
+import { useHistory, useLocation } from 'react-router-dom';
+import Navbar from '../components/navbar/navbar';
+
+import { getData } from '../firebase/services';
 
 function SuccessPage() {
   const location = useLocation();
   const history = useHistory();
-  const id = location.state.applyId;
-  const buttonId = id.substring(0, 8);
-
   const [info, setInfo] = useState({});
+
   useEffect(() => {
     getData(id).then((data) => {
-      if (data) setInfo(data);
+      setInfo(data);
     });
   }, []);
+  const id = location.state.applyId;
+  const buttonId = id.substring(0, 8);
   console.log(info);
+
   const handleClick = (e) => {
-    history.push("/basvuru-sorgula/{id}");
+    history.push('/basvuru-sorgula/{id}');
   };
-  {
-    info &&
-      info.map((info) => {
-        return (
-          <div>
-            <ul key={info.id}>
-              <li>Firstname: {info.firstname}</li>
-              <li>Lastname: {info.lastname}</li>
-              <li>Tc: {info.tc}</li>
-              <li>Content: {info.content}</li>
-            </ul>
-          </div>
-        );
-      });
-  }
   return (
     <div>
       <Navbar />
       <div className="formSuccess">
         <div className="body1">
           <h2>Başvrunuz Değerlendirmeye alınmıştır.. Bekleyiniz.. </h2>
-
-          <button onClick={handleClick} className="buttonn">
+          <button type="button" onClick={handleClick} className="buttonn">
             {buttonId}
           </button>
           <p>Butona tıklayarak başvuru durumuna bakabilirsiniz</p>
+          <br />
+          <ul key={info}>
+            <li>Firstname: {info.firstname}</li>
+            <li>Lastname: {info.lastname}</li>
+            <li>Tc: {info.tc}</li>
+            <li>Adres: {info.adress}</li>
+            <li>Açıklama: {info.content}</li>
+          </ul>
         </div>
       </div>
     </div>

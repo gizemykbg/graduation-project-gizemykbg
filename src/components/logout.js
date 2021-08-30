@@ -1,16 +1,17 @@
-import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import React, { useState } from 'react';
 
-export const LogoutButton = () => {
+import { Redirect } from 'react-router-dom';
+
+const LogoutButton = () => {
   const [loggedOut, setLoggedOut] = useState(false);
 
   const logout = () => {
-    localStorage.removeItem("user-data");
+    localStorage.removeItem('user-data');
     setLoggedOut(true);
   };
 
   if (loggedOut) {
-    return <Redirect to="/LoginPage" push={true} />;
+    return <Redirect to="/LoginPage" />;
   }
 
   return (
@@ -19,3 +20,6 @@ export const LogoutButton = () => {
     </button>
   );
 };
+export default LogoutButton;
+
+// redirect push true

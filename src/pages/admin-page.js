@@ -1,6 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import Sidebar from "../components/admin/sidebar";
+import Sidebar from '../components/admin/sidebar';
+
+import Table from '../components/admin/components/table';
 
 function AdminPage() {
   return (
@@ -8,6 +10,7 @@ function AdminPage() {
       <Sidebar />
       <div>
         <h2>Welcome Admin</h2>
+        <Table />
       </div>
     </div>
   );

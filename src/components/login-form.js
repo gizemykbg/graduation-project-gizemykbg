@@ -1,15 +1,17 @@
-import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
-import { Formik, Form } from "formik";
-import { TextField } from "./textfield";
+/* eslint-disable react/jsx-props-no-spreading */
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { Formik, Form } from 'formik';
+import { TextField } from './textfield';
 
 function LoginForm({ Login, error }) {
-  const [details, setDetails] = useState({ username: "", password: "" });
+  const [details, setDetails] = useState({ username: '', password: '' });
   const history = useHistory();
+
   const submitHandler = (e) => {
     e.preventDefault();
     Login(details);
-    history.push("AdminPage");
+    history.push('AdminPage');
   };
 
   return (
@@ -17,9 +19,9 @@ function LoginForm({ Login, error }) {
       <Formik>
         {(formik) => (
           <Form onSubmit={submitHandler}>
-            <div>
+            <div className="body1">
               <h2>Admin Login</h2>
-              {error != "" ? <div className="error">{error}</div> : ""}
+              {error != '' ? <div className="error">{error}</div> : ''}
               <div>
                 <label htmlFor="username">username</label>
                 <TextField

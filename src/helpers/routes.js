@@ -1,20 +1,15 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Redirect,
-} from "react-router-dom";
-import useLocalStorage from "../hooks/useLocalStorage";
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import useLocalStorage from '../hooks/useLocalStorage';
 
-import AdminPage from "../pages/admin-page";
-import LoginPage from "../pages/login-page";
-import FormPage from "../pages/form-page";
-import SuccessPage from "../pages/success-page";
-import PrivateRoute from "./private-route";
+import AdminPage from '../pages/admin-page';
+import LoginPage from '../pages/login-page';
+import FormPage from '../pages/form-page';
+import SuccessPage from '../pages/success-page';
+import PrivateRoute from './private-route';
 
 const Routers = () => {
-  const [user, setUser] = useLocalStorage("user-data", "");
+  const [user, setUser] = useLocalStorage('user-data', '');
   return (
     <>
       <Router>
@@ -36,8 +31,3 @@ const Routers = () => {
 };
 
 export default Routers;
-
-/*  
- <Route path="/AdminPage">
-            {admin ? <AdminPage /> : <LoginPage {...{ setAdmin }} />}
-          </Route>*/
