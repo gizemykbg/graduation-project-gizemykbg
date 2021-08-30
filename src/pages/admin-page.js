@@ -9,7 +9,7 @@ function AdminPage() {
     <div className="welcome">
       <Sidebar />
       <div>
-        <h2>Welcome Admin</h2>
+        <h2>Başvuru Listesi</h2>
         <Table />
       </div>
     </div>
