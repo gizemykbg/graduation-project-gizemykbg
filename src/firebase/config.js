@@ -1,7 +1,7 @@
 import firebase from 'firebase/app';
-// import * as firebase from "firebase";
-import 'firebase/firestore';
+// import firebase from 'firebase/app';
 import 'firebase/storage';
+import 'firebase/firestore';
 
 // if (!firebase.apps.length) {
 firebase.initializeApp({
@@ -15,7 +15,7 @@ firebase.initializeApp({
 });
 
 // var storage = firebase.storage();
-export const firebaseApp = firebase;
+
 export const firestore = firebase.firestore();
 export const storage = firebase.storage();
 

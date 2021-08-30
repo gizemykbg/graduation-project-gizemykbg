@@ -4,21 +4,21 @@ import useLocalStorage from '../hooks/useLocalStorage';
 export const AdminContext = createContext();
 
 function LoginProvider({ children }) {
-  const [isLogged, setIsLogged] = useLocalStorage('user-data', false);
+  const [isUser, setIsUser] = useLocalStorage('user-data', false);
 
   const login = (user) => {
-    if (user.username === 'gizem' && user.password === 'gizem') {
-      setIsLogged(true);
+    if (user.username === 'kodluyoruz' && user.password === 'bootcamp109') {
+      setIsUser(true);
       return true;
     }
     return false;
   };
 
   const logout = () => {
-    setIsLogged(false);
+    setIsUser(false);
   };
 
-  const value = { isLogged, login, logout };
+  const value = { isUser, login, logout };
 
   return <AdminContext.Provider value={value}>{children}</AdminContext.Provider>;
 }

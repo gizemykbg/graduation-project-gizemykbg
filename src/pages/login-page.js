@@ -6,8 +6,8 @@ import useLocalStorage from '../hooks/useLocalStorage';
 
 export default function LoginPage() {
   const AdminUser = {
-    username: 'gizem',
-    password: 'gizem',
+    username: 'kodluyoruz',
+    password: 'bootcamp109',
   };
 
   const [user, setUser] = useLocalStorage('user-data', '');

@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useMemo, useState, useEffect } from 'react';
 import styled from 'styled-components';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { adminFormList, updateForm } from '../../../firebase/services';
 import EditableCell from './edit-table-cell';
 import TableC from './table-utils';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function TableP() {
   const [data, setData] = useState([]);

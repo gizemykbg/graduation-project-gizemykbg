@@ -1,6 +1,6 @@
-import firebase, { firestore } from "./config";
+import firebase, { firestore } from './config';
 
-const formRef = firestore.collection("forms");
+const formRef = firestore.collection('forms');
 
 export const addForm = async (data) => {
   let applyId; // id
@@ -15,8 +15,8 @@ export const addForm = async (data) => {
       tc: data.tc,
       adress: data.adress,
       cover: data.cover[0],
-      status: "Pending",
-      adminMessage: "",
+      status: 'Pending',
+      adminMessage: '',
       createdDate: firebase.firestore.Timestamp.now(),
     })
     .then((docs) => {
@@ -36,11 +36,11 @@ export const getData = async (applyId) => {
       if (doc.exists) {
         formData = doc.data();
       } else {
-        formData = "";
+        formData = '';
       }
     })
     .catch((error) => {
-      console.log("Error", error);
+      console.log('Error', error);
     });
 
   return formData;

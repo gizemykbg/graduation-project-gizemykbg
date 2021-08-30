@@ -27,7 +27,8 @@
         "useTabs": false
       }
     ],
-
+    "react/destructuring-assignment": ["off"],
+    "import/no-unresolved": ["off"],
     "no-shadow": ["off"],
     "import/no-named-as-default-member": ["off"],
     "jsx-a11y/label-has-associated-control": ["off"],
