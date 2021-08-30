@@ -34,11 +34,12 @@ function SuccessPage() {
             <p>Butona tıklayarak başvuru durumuna bakabilirsiniz</p>
             <br />
             <ul>
-              <li>Firstname: {info.firstname}</li>
-              <li>Lastname: {info.lastname}</li>
+              <li>Ad: {info.firstname}</li>
+              <li>Soyad: {info.lastname}</li>
               <li>Tc: {info.tc}</li>
               <li>Adres: {info.adress}</li>
               <li>Açıklama: {info.content}</li>
+              <li>Durum: {info.status}</li>
             </ul>
           </div>
         </div>
