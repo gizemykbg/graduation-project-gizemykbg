@@ -21,7 +21,7 @@ function LoginForm({ Login, error }) {
           <Form onSubmit={submitHandler}>
             <div className="body1">
               <h2>Admin Login</h2>
-              {error != '' ? <div className="error">{error}</div> : ''}
+              {error !== '' ? <div className="error">{error}</div> : ''}
               <div>
                 <label htmlFor="username">username</label>
                 <TextField

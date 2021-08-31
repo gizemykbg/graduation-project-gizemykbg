@@ -1,8 +1,8 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useRef, useState, useEffect } from 'react';
-import { useHistory, useParams } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
-import { adminFormList, getData } from '../firebase/services';
+import { getData } from '../firebase/services';
 
 export default function ApplySearch() {
   const [value, setValue] = useState(' ');
@@ -16,12 +16,12 @@ export default function ApplySearch() {
     setValue(inputRef.current.value);
     getData(value).then((data) => {
       setData(data);
-      console.log(data);
-      console.log('lalalalla');
+      //  console.log(data);
+      //  console.log('lalalalla');
     });
   };
 
-  console.log(value);
+  // console.log(value);
 
   const Styles = styled.div`
      {

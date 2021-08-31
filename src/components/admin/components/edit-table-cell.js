@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { updateForm } from '../../../firebase/services';
 
 const EditableCell = ({ row: { index }, column: { id }, updateMyData, value: initialValue }) => {
   const [value, setValue] = useState(initialValue);

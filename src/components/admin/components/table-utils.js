@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
+import React from 'react';
 import { useTable, usePagination } from 'react-table';
-import Button from 'react-bootstrap/Button';
 import Table from 'react-bootstrap/Table';
 import Container from 'react-bootstrap/Container';
 import 'bootstrap/dist/css/bootstrap.min.css';

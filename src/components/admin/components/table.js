@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useMemo, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { adminFormList, updateForm } from '../../../firebase/services';
+import { adminFormList } from '../../../firebase/services';
 import EditableCell from './edit-table-cell';
 import TableC from './table-utils';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -16,11 +16,12 @@ function TableP() {
   const newList = (data) => {
     setData(data);
   };
-  console.log(data);
+  //  console.log(data);
   useEffect(() => {
     if (!data.length) {
       loadList();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const UpdateMyData = (rowIndex, columnId, value) => {
@@ -37,7 +38,7 @@ function TableP() {
             [columnId]: value,
           };
         }
-        console.log(value);
+        // console.log(value);
         return row;
       })
     );

@@ -4,7 +4,7 @@ const formRef = firestore.collection('forms');
 
 export const addForm = async (data) => {
   let applyId; // id
-  console.log(applyId);
+  //  console.log(applyId);
 
   await formRef
     .add({
@@ -40,7 +40,7 @@ export const getData = async (applyId) => {
       }
     })
     .catch((error) => {
-      console.log('Error', error);
+      //  console.log('Error', error);
     });
 
   return formData;
@@ -58,7 +58,7 @@ export const adminFormList = (res) => {
     })
 
     .catch((error) => {
-      console.log(error);
+      //  console.log(error);
     });
 };
 

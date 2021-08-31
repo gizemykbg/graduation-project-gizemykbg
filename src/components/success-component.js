@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useLocation, useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 
 import { getData } from '../firebase/services';
 
 function Success() {
   const { id } = useParams();
-  const location = useLocation();
+  // const location = useLocation();
   const history = useHistory();
   const [info, setInfo] = useState({});
 
@@ -13,10 +13,11 @@ function Success() {
     getData(id).then((data) => {
       setInfo(data);
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   // const id = location.state.applyId;
   const buttonId = id;
-  console.log(info);
+  // console.log(info);
 
   const handleClick = (e) => {
     history.push({

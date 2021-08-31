@@ -1,12 +1,13 @@
-import React, { useContext, useState, useEffect } from 'react';
+/* eslint no-sequences: "off" */
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { TextField } from './textfield';
 import { addForm } from '../firebase/services';
 
-const ApplyForm = ({}) => {
-  const [loading, setLoading] = useState('');
+const ApplyForm = () => {
+  // const [loading, setLoading] = useState('');
   const history = useHistory();
 
   const validate = Yup.object().shape({
@@ -43,18 +44,14 @@ const ApplyForm = ({}) => {
       }}
       validationSchema={validate}
       onSubmit={(values) => {
-        console.log(values);
-        addForm(values)
-          .then((applyId) => {
-            console.log(applyId);
-            history.push({
-              pathname: `/basvuru-basarili/${applyId}`,
-              state: { applyId },
-            });
-          })
-          .catch((error) => {
-            alert(error);
+        // console.log(values);
+        addForm(values).then((applyId) => {
+          //  console.log(applyId);
+          history.push({
+            pathname: `/basvuru-basarili/${applyId}`,
+            state: { applyId },
           });
+        });
       }}
     >
       {(formik) => (

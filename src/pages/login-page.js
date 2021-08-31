@@ -15,9 +15,9 @@ export default function LoginPage() {
   const history = useHistory();
 
   const Login = (details) => {
-    console.log(details);
-    if (details.username == AdminUser.username && details.password == AdminUser.password) {
-      console.log('Logged in');
+    //  console.log(details);
+    if (details.username === AdminUser.username && details.password === AdminUser.password) {
+      //  console.log('Logged in');
 
       setUser({
         username: details.username,
@@ -32,7 +32,7 @@ export default function LoginPage() {
   return (
     <div className="Login">
       <Navbar />
-      {user.username != '' ? (
+      {user.username !== '' ? (
         <LoginForm Login={Login} error={error} />
       ) : (
         <Redirect to="/AdminPage" />
@@ -40,5 +40,3 @@ export default function LoginPage() {
     </div>
   );
 }
-
-// redirect push true

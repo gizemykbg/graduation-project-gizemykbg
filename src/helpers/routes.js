@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import useLocalStorage from '../hooks/useLocalStorage';
 
 import AdminPage from '../pages/admin-page';
@@ -10,7 +10,7 @@ import PrivateRoute from './private-route';
 import Sorgulama from '../pages/basvuru-sorgula';
 
 const Routers = () => {
-  const [user, setUser] = useLocalStorage('user-data', '');
+  const setUser = useLocalStorage('user-data', '');
   return (
     <>
       <Router>
