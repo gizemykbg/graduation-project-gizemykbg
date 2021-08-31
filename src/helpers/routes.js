@@ -18,7 +18,7 @@ const Routers = () => {
           <Route exact path="/">
             <FormPage />
           </Route>
-          <Route path="/basvuru-basarili">
+          <Route path="/basvuru-basarili/:id">
             <SuccessPage />
           </Route>
           <PrivateRoute path="/AdminPage" component={AdminPage} />

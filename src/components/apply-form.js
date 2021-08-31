@@ -47,8 +47,8 @@ const ApplyForm = ({}) => {
         addForm(values)
           .then((applyId) => {
             console.log(applyId);
-            history.replace({
-              pathname: '/basvuru-basarili',
+            history.push({
+              pathname: `/basvuru-basarili/${applyId}`,
               state: { applyId },
             });
           })

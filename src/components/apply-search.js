@@ -1,16 +1,18 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import styled from 'styled-components';
 import { adminFormList, getData } from '../firebase/services';
 
 export default function ApplySearch() {
   const [value, setValue] = useState(' ');
   const [data, setData] = useState({});
+  const history = useHistory();
 
   const inputRef = useRef();
 
   const handleClick = () => {
+    history.push(`/basvuru-sorgula/${value}`);
     setValue(inputRef.current.value);
     getData(value).then((data) => {
       setData(data);

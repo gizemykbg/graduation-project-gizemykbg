@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation, useParams } from 'react-router-dom';
 
 import { getData } from '../firebase/services';
 
 function Success() {
+  const { id } = useParams();
   const location = useLocation();
   const history = useHistory();
   const [info, setInfo] = useState({});
@@ -13,12 +14,15 @@ function Success() {
       setInfo(data);
     });
   }, []);
-  const id = location.state.applyId;
+  // const id = location.state.applyId;
   const buttonId = id;
   console.log(info);
 
   const handleClick = (e) => {
-    history.replace({ pathname: '/basvuru-sorgula' });
+    history.push({
+      pathname: `/basvuru-sorgula`,
+      state: { id },
+    });
   };
   return (
     <>
