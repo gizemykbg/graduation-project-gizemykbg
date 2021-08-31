@@ -112,6 +112,7 @@ export default function ApplySearch() {
         </button>
         <br />
         <h6>Çözemediğim sorun yüzünden iki kere aratınız.</h6>
+        {!data && <div>Bilgileriniz bulunamadı </div>}
         <div>
           <ul>
             <li>{data.firstname}</li>
